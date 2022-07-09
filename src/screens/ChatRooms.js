@@ -14,12 +14,12 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import { ScrollView } from 'react-native-gesture-handler';
 import Profiles from '../components/Profiles';
 import Messages from '../components/Messages';
+import Data from '../dummy/Dummy1.json'
 
-
-const Chat = (props) => {
+const ChatRooms = (props) => {
     const URL = `https://api.github.com/users`;
     const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     
     const pan = useRef(new Animated.ValueXY()).current;
     const list = useRef(new Animated.ValueXY()).current;
@@ -36,13 +36,13 @@ const Chat = (props) => {
 
         Animated.timing(pan, {
             toValue:{x:-400,y:0},
-            delay:1000,
+            delay:400,
             useNativeDriver:false
         }).start();
 
         Animated.timing(list, {
             toValue:{x:0,y:-300},
-            delay:2000,
+            delay:400,
             useNativeDriver:false
         }).start();
 
@@ -61,7 +61,7 @@ const Chat = (props) => {
           translucent
         />
            <View style={styles.headerContainer}>
-                <Text style={styles.header}>Chat</Text>
+                <Text style={styles.header}>ChatRooms</Text>
                 <Icon name='add' color='#fff' size={30}/>
            </View>
            <ScrollView
@@ -69,7 +69,7 @@ const Chat = (props) => {
                 style={styles.proContainer}
                 showsHorizontalScrollIndicator={false}
            >
-                {loading ? 
+                {/* {loading ? 
                     (
                         <ActivityIndicator size='small' color='#FFF'/>
                     ):(
@@ -85,7 +85,7 @@ const Chat = (props) => {
                             }
                         </Animated.View>
                     )
-                }
+                } */}
            </ScrollView>
            <View style={styles.ops}>
                 <View style={styles.col}>
@@ -100,12 +100,12 @@ const Chat = (props) => {
                         ):(
                             <Animated.View style={[list.getLayout(), styles.list]}>
                                 {
-                                    data.map((item, index) => (
+                                    Data.map((item, index) => (
                                             <Messages
                                                 key={item.id}
                                                 username={item.login}
                                                 uri={item.avatar_url}
-                                                count={Math.floor(Math.random() * 3)}
+                                                // count={Math.floor(Math.random() * 3)}
                                                 onPress={()=>{
                                                     props.navigation.navigate('Discussion',{
                                                         itemId:item.id,
@@ -122,7 +122,7 @@ const Chat = (props) => {
        </LinearGradient>
     )
 }
-export default Chat;
+export default ChatRooms;
 
 const styles = StyleSheet.create({
     list:{
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     ops:{
         borderTopLeftRadius:40,
         borderTopRightRadius:40,
-        height:500,
+        height:660,
         backgroundColor:'#FFF',
         marginHorizontal:-20
     },

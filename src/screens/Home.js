@@ -4,9 +4,7 @@ import { View, Text, StyleSheet,Button } from 'react-native';
 const Home = ({navigation}) => {
   return (
   <View style={styles.container}>
-    <Text>Hi</Text>
-    <Button onPress={()=>navigation.navigate('Chat')} title='Chat'/>
-    <Button title='Discussion'/>
+    <Button onPress={()=>navigation.navigate('ChatRooms')} title='ChatRooms'/>
   </View>
   );
 };

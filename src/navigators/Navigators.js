@@ -14,7 +14,10 @@ import {
   Signup,
   Home,
   Discussion,
-  Chat
+  Chat,
+  ChatScreen,
+  ChatRooms,
+  HomeScreen
 } from '../screens';
 import CustomDrawer from '../components/CustomDrawer';
 
@@ -108,8 +111,8 @@ const Navigators = ()=>{
             />
             <Stack.Screen
               options={{headerShown:false}} 
-              name="Chat"
-              component={Chat}
+              name="ChatRooms"
+              component={ChatRooms}
             />
             <Stack.Screen
               name="DrawerHome"

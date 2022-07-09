@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
     View,
     TouchableOpacity,
@@ -8,13 +8,15 @@ import {
 import Entypo from 'react-native-vector-icons/Entypo'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-
 const Input = ({ inputMessage, onSendPress, setMessage }) => {
+    
     return(
         <View style={styles.container}>
-            <Entypo name='emoji-happy' color='#fff' size={20}/>
+            {/* <TouchableOpacity>
+                <Entypo name='emoji-happy' color='#fff' size={20}/>
+            </TouchableOpacity> */}
             <TextInput
-                placeholder='Some text'
+                placeholder='Message'
                 value={inputMessage}
                 onChangeText={setMessage}
                 style={styles.input}
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     },
     input:{
         fontFamily:'Montserrat_600SemiBold',
-        fontSize:11,
+        fontSize:14,
         color:'#fff',
         paddingHorizontal:10,
         flex:1

@@ -7,7 +7,9 @@ import LastWatch from '../components/LastWatch';
 import Received from '../components/Received';
 import Sent from '../components/Sent';
 import Data from '../dummy/Data.json';
-import Input from '../components/Input'; 
+import data from '../dummy/Dummy1.json'
+import users from '../dummy/Dummyusers.json'
+import Input from '../components/Input';
 
 const Discussion = ({ route, navigation }) => {
     const { itemName , itemPic } = route.params;
@@ -46,25 +48,24 @@ const Discussion = ({ route, navigation }) => {
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <LastWatch  checkedOn='Yesterday'/>
-                    <Received 
-                        image={itemPic}
-                        message={Data[0].message}
-                    />
+                    {
+                        users.map((item,index) =>{
+                           const count=Math.floor(Math.random() * 3)
+                            return(
+                                <Received 
+                                    image={item.avatar_url}
+                                    message={Data[count].message}
+                                />
+                            )
+                        })
+                    }
                     <Sent
                         message={Data[1].message}
-                    />
-                    <Received 
-                        image={itemPic}
-                        message={Data[2].message}
                     />
                      <Sent
                         message={Data[3].message}
                     />
                     <LastWatch  checkedOn='Today'/>
-                    <Received 
-                        image={itemPic}
-                        message={Data[4].message}
-                    />
                     <View>
                         {txt}
                     </View>
