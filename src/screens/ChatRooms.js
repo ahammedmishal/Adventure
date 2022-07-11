@@ -17,7 +17,6 @@ import Messages from '../components/Messages';
 import Data from '../dummy/Dummy1.json'
 
 const ChatRooms = (props) => {
-    const URL = `https://api.github.com/users`;
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false)
     
@@ -25,14 +24,14 @@ const ChatRooms = (props) => {
     const list = useRef(new Animated.ValueXY()).current;
 
     useEffect(function() {
-        const getData = async () => {
-            const resp = await fetch(URL);
-            const data = await resp.json();
-            setData(data);
-            setLoading(false);
-            console.log(data);
-        };
-        getData();
+        // const getData = async () => {
+        //     const resp = await fetch(URL);
+        //     const data = await resp.json();
+        //     setData(data);
+        //     setLoading(false);
+        //     console.log(data);
+        // };
+        // getData();
 
         Animated.timing(pan, {
             toValue:{x:-400,y:0},
@@ -48,7 +47,7 @@ const ChatRooms = (props) => {
 
     }, [])
 
-    console.log(data.login)
+    // console.log(data.login)
 
     return(
        <LinearGradient

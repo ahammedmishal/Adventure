@@ -179,7 +179,8 @@ const Signup = ({navigation}) => {
 
       <FormButton
         buttonTitle="Login"
-        onPress={() => navigation.navigate('Home')}
+        backgroundColor={'black'}
+        onPress={() => navigation.navigate('HomeScreen')}
         isLoading={isLoading}
       />
       

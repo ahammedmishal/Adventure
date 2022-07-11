@@ -107,6 +107,7 @@ const Login = ({navigation}) => {
 
       <FormButton
         buttonTitle="Login"
+        backgroundColor={'black'}
         onPress={()=> onLogin()}
         isLoading={isLoading}
       />

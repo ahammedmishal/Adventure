@@ -8,6 +8,7 @@ export default {
     GREEN_CYAN2:'#6F958B',
     GREEN_CYAN3:'#5D7E76',
     LIGHT_GREY: '#ededed',
+    GREY: '#908e8c',
     LIGHT_GREY2: '#f7f7f7',
     LIGHT_GREY3: '#E3E3E3',
     LIGHT_GREY4: '#EEEEEE',

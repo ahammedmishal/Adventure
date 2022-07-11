@@ -12,14 +12,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   Login,
   Signup,
-  Home,
   Discussion,
-  Chat,
-  ChatScreen,
   ChatRooms,
   HomeScreen
 } from '../screens';
-import CustomDrawer from '../components/CustomDrawer';
+
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator()
@@ -101,11 +98,6 @@ const Navigators = ()=>{
             />
             <Stack.Screen
               options={{headerShown:false}} 
-              name="Home"
-              component={Home}
-            />
-            <Stack.Screen
-              options={{headerShown:false}} 
               name="Discussion"
               component={Discussion}
             />
@@ -113,6 +105,11 @@ const Navigators = ()=>{
               options={{headerShown:false}} 
               name="ChatRooms"
               component={ChatRooms}
+            />
+            <Stack.Screen
+              options={{headerShown:false}} 
+              name="HomeScreen"
+              component={HomeScreen}
             />
             <Stack.Screen
               name="DrawerHome"

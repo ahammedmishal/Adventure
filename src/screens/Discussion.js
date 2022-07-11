@@ -53,6 +53,7 @@ const Discussion = ({ route, navigation }) => {
                            const count=Math.floor(Math.random() * 3)
                             return(
                                 <Received 
+                                    key={index}
                                     image={item.avatar_url}
                                     message={Data[count].message}
                                 />
